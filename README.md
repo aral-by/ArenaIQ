@@ -40,6 +40,9 @@ Load the extension in Chrome:
 
 ### Scraper Service Setup
 
+> **⚠️ Yapım Aşamasında**  
+> Gerçek FlashScore scrape servisi ve OpenAI entegrasyonu henüz geliştirilme aşamasındadır. Şu an mock verilerle çalışmaktadır.
+
 ```bash
 cd scraper
 cp ../.env.example .env
