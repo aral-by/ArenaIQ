@@ -43,14 +43,14 @@ export default function MatchStatistics({ matchData }: Props) {
   };
 
   return (
-    <div className="bg-slate-900/50 rounded-lg border border-slate-800/50 p-5">
-      <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">
+    <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl border border-slate-700/50 p-6 shadow-xl">
+      <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-5">
         Takım İstatistikleri
       </h3>
 
-      <div className="flex justify-between items-center mb-4 pb-3 border-b border-slate-800">
-        <span className="text-purple-400 text-xs font-semibold">{homeTeam}</span>
-        <span className="text-blue-400 text-xs font-semibold">{awayTeam}</span>
+      <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-700">
+        <span className="text-purple-400 text-sm font-bold">{homeTeam}</span>
+        <span className="text-blue-400 text-sm font-bold">{awayTeam}</span>
       </div>
       
       <div className="space-y-1">

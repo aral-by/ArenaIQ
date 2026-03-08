@@ -21,36 +21,36 @@ export default function ScoreHeader({ matchData }: Props) {
   };
 
   return (
-    <div className="bg-slate-900/50 rounded-lg border border-slate-800/50 p-6">
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center gap-2">
-          <span className={`px-2 py-0.5 ${statusColors[matchData.status]} text-white text-xs font-bold rounded uppercase`}>
+    <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl border border-slate-700/50 p-8 shadow-2xl">
+      <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center gap-3">
+          <span className={`px-3 py-1.5 ${statusColors[matchData.status]} text-white text-xs font-bold rounded-full uppercase shadow-lg`}>
             {statusText[matchData.status]}
           </span>
           {matchData.status === 'live' && (
-            <span className="text-slate-400 text-sm">{matchData.minute}'</span>
+            <span className="text-slate-300 text-base font-semibold">{matchData.minute}'</span>
           )}
         </div>
-        <span className="text-slate-500 text-xs uppercase tracking-wider">{matchData.league}</span>
+        <span className="text-slate-400 text-sm uppercase tracking-wider font-medium">{matchData.league}</span>
       </div>
 
       <div className="flex items-center justify-between">
-        <div className="flex-1 text-right pr-8">
-          <p className="text-white text-lg font-medium">{matchData.homeTeam}</p>
+        <div className="flex-1 text-right pr-12">
+          <p className="text-white text-2xl font-bold">{matchData.homeTeam}</p>
         </div>
         
-        <div className="flex items-center gap-4 px-6">
-          <span className="text-white text-5xl font-bold tabular-nums">{matchData.homeScore}</span>
-          <span className="text-slate-700 text-3xl font-light">-</span>
-          <span className="text-white text-5xl font-bold tabular-nums">{matchData.awayScore}</span>
+        <div className="flex items-center gap-6 px-10 py-6 bg-slate-950/50 rounded-xl border border-slate-700/30">
+          <span className="text-white text-6xl font-black tabular-nums tracking-tight">{matchData.homeScore}</span>
+          <span className="text-slate-600 text-4xl font-light">-</span>
+          <span className="text-white text-6xl font-black tabular-nums tracking-tight">{matchData.awayScore}</span>
         </div>
         
-        <div className="flex-1 text-left pl-8">
-          <p className="text-white text-lg font-medium">{matchData.awayTeam}</p>
+        <div className="flex-1 text-left pl-12">
+          <p className="text-white text-2xl font-bold">{matchData.awayTeam}</p>
         </div>
       </div>
       
-      <p className="text-center text-slate-500 text-xs mt-4">{matchData.period}</p>
+      <p className="text-center text-slate-400 text-sm mt-6 font-medium">{matchData.period}</p>
     </div>
   );
 }

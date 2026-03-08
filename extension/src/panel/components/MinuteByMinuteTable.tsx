@@ -17,8 +17,8 @@ export default function MinuteByMinuteTable({ matchData }: Props) {
   ];
 
   return (
-    <div className="bg-slate-900/50 rounded-lg border border-slate-800/50 p-5">
-      <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">
+    <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl border border-slate-700/50 p-6 shadow-xl">
+      <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-5">
         Dakika Dakika Skor Tablosu (40 Hücre)
       </h3>
       
