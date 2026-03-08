@@ -1,10 +1,12 @@
 <div align="center">
-  <img src="../logo.png" alt="ArenaIQ Logo" width="600">
+  <img src="logo/mainlogo.png" alt="ArenaIQ Logo" width="600">
   
-  # ArenaIQ
+  <h1>ArenaIQ</h1>
   
-  Real-time AI-powered basketball match analysis Chrome extension for FlashScore.
+  <p>Real-time AI-powered basketball match analysis Chrome extension for FlashScore.</p>
 </div>
+
+---
 
 ## Features
 
