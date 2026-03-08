@@ -5,8 +5,8 @@ import ScoreHeader from './components/ScoreHeader';
 import QuarterBreakdown from './components/QuarterBreakdown';
 import MatchStatistics from './components/MatchStatistics';
 import MinuteByMinuteTable from './components/MinuteByMinuteTable';
-import AIPanel from './components/AIPanel';
-import OddsPanel from './components/OddsPanel';
+import ScoreChart from './components/ScoreChart';
+import AIChatBubble from './components/AIChatBubble';
 import '../styles.css';
 
 function Panel() {
@@ -16,7 +16,7 @@ function Panel() {
   const [aiLoading, setAiLoading] = useState(false);
   const [aiAnalyses, setAiAnalyses] = useState<any[]>([]);
 
-  const handleAskAI = async () => {
+  const handleAskAI = async (message: string) => {
     if (!matchData || aiLoading) return;
     
     setAiLoading(true);
@@ -25,7 +25,7 @@ function Panel() {
       const response = await fetch('http://localhost:4000/ask-ai', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ matchData })
+        body: JSON.stringify({ matchData, message })
       });
       
       if (response.ok) {
@@ -64,31 +64,32 @@ function Panel() {
 
   return (
     <div className="min-h-screen bg-slate-950">
-      <div className="border-b border-slate-900 bg-slate-950 sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto px-6 py-4">
+      <div className="border-b border-slate-800 bg-slate-900/80 backdrop-blur-sm sticky top-0 z-10 shadow-xl">
+        <div className="max-w-7xl mx-auto px-8 py-5">
           <img 
             src="../../../logo/mainlogo.png" 
             alt="ArenaIQ" 
-            className="h-7 w-auto"
+            className="h-8 w-auto"
           />
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-8">
-        <ScoreHeader matchData={matchData} />
-        
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
-          <div className="lg:col-span-2 space-y-5">
+      <div className="max-w-7xl mx-auto px-8 py-10">
+        <div className="space-y-8">
+          <ScoreHeader matchData={matchData} />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <QuarterBreakdown matchData={matchData} />
-            <MinuteByMinuteTable matchData={matchData} />
             <MatchStatistics matchData={matchData} />
-            <AIPanel onAskAI={handleAskAI} analyses={aiAnalyses} loading={aiLoading} />
           </div>
-          <div className="space-y-5">
-            <OddsPanel matchData={matchData} />
-          </div>
+
+          <ScoreChart matchData={matchData} />
+          
+          <MinuteByMinuteTable matchData={matchData} />
         </div>
       </div>
+
+      <AIChatBubble onAskAI={handleAskAI} analyses={aiAnalyses} loading={aiLoading} />
     </div>
   );
 }
