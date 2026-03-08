@@ -39,7 +39,7 @@ function Panel() {
       <div className="border-b border-slate-900 bg-slate-950/80 backdrop-blur sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <img 
-            src="../../logo/mainlogo.png" 
+            src="../../../logo/mainlogo.png" 
             alt="ArenaIQ" 
             className="h-8 w-auto"
           />
