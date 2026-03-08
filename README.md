@@ -4,21 +4,21 @@ Real-time AI-powered basketball match analysis Chrome extension for FlashScore.
 
 ## Features
 
-- 🏀 Live match score tracking
-- 🤖 AI-powered match commentary (GPT-4o)
-- 📊 Betting odds analysis
-- ⏱️ Auto-refresh every 60 seconds
-- 👀 Professional purple-accented UI
+- Live match score tracking
+- AI-powered match commentary (GPT-4o)
+- Betting odds analysis
+- Auto-refresh every 60 seconds
+- Professional UI design
 
-## Stack
+## Tech Stack
 
-- **Extension**: React + Vite + TailwindCSS + TypeScript
-- **Scraper**: Node.js + Playwright + Express
-- **AI**: OpenAI GPT-4o
+**Extension**: React + Vite + TailwindCSS + TypeScript  
+**Scraper**: Node.js + Playwright + Express  
+**AI**: OpenAI GPT-4o
 
-## Setup
+## Installation
 
-### 1. Extension
+### Extension Setup
 
 ```bash
 cd extension
@@ -26,31 +26,32 @@ npm install
 npm run build
 ```
 
-Load `extension/dist` folder in Chrome:
-1. Go to `chrome://extensions/`
+Load the extension in Chrome:
+1. Navigate to `chrome://extensions/`
 2. Enable "Developer mode"
 3. Click "Load unpacked"
-4. Select `extension/dist` folder
+4. Select the `extension/dist` folder
 
-### 2. Scraper Service
+### Scraper Service Setup
 
 ```bash
 cd scraper
 cp ../.env.example .env
-# Edit .env and add your OpenAI API key
 npm install
 npm run dev
 ```
 
-Scraper runs on `http://localhost:4000`
+Edit `.env` file and add your OpenAI API key. The scraper service runs on `http://localhost:4000`.
 
 ## Usage
 
-1. Open a FlashScore match page
+1. Open a FlashScore match page in your browser
 2. Click the ArenaIQ extension icon
-3. Click "Analizi Başlat"
-4. View live analysis in new tab
+3. Click "Analizi Başlat" button
+4. View live analysis in the opened tab
+
+The panel updates automatically every 60 seconds with fresh data and commentary.
 
 ## Disclaimer
 
-This tool is for analysis purposes only. Not financial advice.
+This tool is for informational and analysis purposes only. Not financial or betting advice.
