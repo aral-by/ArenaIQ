@@ -136,16 +136,31 @@ app.get('/scrape', async (req, res) => {
 });
 
 app.post('/ask-ai', async (req, res) => {
-  const { matchData } = req.body;
+  const { matchData, message } = req.body;
   
   if (!matchData) {
     return res.status(400).json({ error: 'Match data required' });
   }
 
   // Mock AI analizi - gerçekte GPT-4o'ya gönderilecek
+  const responses = [
+    `${matchData.period} periyodunda maç oldukça rekabetçi seyrediyor. ${matchData.awayTeam}, ${matchData.awayScore - matchData.homeScore} sayı farkla önde gidiyor. ${matchData.homeTeam}'in şut yüzdesi düşük, ancak ribaunt sayısı yüksek. Kritik anlarda savunma önemli olacak.`,
+    `${matchData.homeTeam}'in son çeyrekte performans artışı göstermesi gerekiyor. Şu anda top kayıpları fazla ve bu maçı doğrudan etkiliyor. ${matchData.awayTeam} defansif olarak güçlü bir görüntü sergiliyor.`,
+    `İstatistikler ${matchData.awayTeam} lehine gözüküyor. Özellikle şut yüzdesi ve ribaunt kontrolünde avantajlılar. ${matchData.homeTeam}'in son 10 dakikada tempo değişikliği yapması gerekebilir.`
+  ];
+
+  const insights = [
+    `Maçın gidişatına göre ${matchData.awayTeam} önde gözüküyor. Oranlar bunu yansıtıyor (${matchData.awayOdds}). ${matchData.homeTeam}'in geri dönüşü için güçlü bir çeyrek gerekli.`,
+    `${matchData.homeTeam}'in form grafiğine bakıldığında momentum kaybetmiş durumda. Defansif değişiklikler kritik önem taşıyor.`,
+    `Her iki takım da benzer şut yüzdelerine sahip ama ${matchData.awayTeam}'in ribaunt avantajı fark yaratıyor.`
+  ];
+
+  const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+  const randomInsight = insights[Math.floor(Math.random() * insights.length)];
+
   const aiAnalysis = {
-    commentary: `${matchData.period} periyodunda maç oldukça rekabetçi seyrediyor. ${matchData.awayTeam}, ${matchData.awayScore - matchData.homeScore} sayı farkla önde gidiyor. ${matchData.homeTeam}'in şut yüzdesi düşük, ancak ribaunt sayısı yüksek. Kritik anlarda savunma önemli olacak.`,
-    bettingInsight: `Maçın gidişatına göre ${matchData.awayTeam} önde gözüküyor. Oranlar bunu yansıtıyor (${matchData.awayOdds}). ${matchData.homeTeam}'in son çeyrekde performans artışı göstermesi gerekiyor.`,
+    commentary: message ? `"${message}" sorusuna yanıt: ${randomResponse}` : randomResponse,
+    bettingInsight: randomInsight,
     timestamp: Date.now()
   };
 
