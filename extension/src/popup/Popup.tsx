@@ -32,13 +32,13 @@ function Popup() {
       <div className="p-6 space-y-4">
         <div>
           <label className="block text-sm font-medium text-slate-400 mb-2">
-            Maçın Linki:
+            Maç URL'si
           </label>
           <input
             type="text"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            placeholder="Paste FlashScore match URL..."
+            placeholder="FlashScore maç linkini yapıştırın..."
             className="w-full px-3 py-2.5 bg-slate-900 border border-slate-700 rounded text-white text-sm placeholder-slate-600 focus:outline-none focus:border-purple-600 focus:ring-1 focus:ring-purple-600 transition"
           />
         </div>
@@ -48,7 +48,7 @@ function Popup() {
           disabled={!url}
           className="w-full py-2.5 bg-purple-600 text-white text-sm font-medium rounded hover:bg-purple-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
         >
-          Maça Göz At
+          Analiz Et
         </button>
       </div>
     </div>

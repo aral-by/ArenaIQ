@@ -9,13 +9,15 @@ export default function ScoreHeader({ matchData }: Props) {
   const statusColors = {
     live: 'bg-red-500',
     upcoming: 'bg-slate-600',
-    finished: 'bg-slate-700'
+    finished: 'bg-slate-700',
+    waiting: 'bg-yellow-600'
   };
 
   const statusText = {
-    live: 'LIVE',
-    upcoming: 'UPCOMING',
-    finished: 'FINAL'
+    live: 'CANLI',
+    upcoming: 'YAKLAŞAN',
+    finished: 'BİTTİ',
+    waiting: 'BEKLEMEDE'
   };
 
   return (

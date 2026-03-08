@@ -9,7 +9,7 @@ export default function OddsPanel({ matchData }: Props) {
   return (
     <div className="bg-slate-900/50 rounded-lg border border-slate-800/50 p-5">
       <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">
-        Odds
+        Oranlar
       </h3>
       
       <div className="space-y-4">
@@ -41,7 +41,7 @@ export default function OddsPanel({ matchData }: Props) {
 
         <div className="bg-slate-800/30 rounded p-3 mt-6">
           <p className="text-slate-500 text-xs leading-relaxed">
-            Informational purposes only. Not betting advice.
+            Bilgilendirme amaçlıdır. Yatırım tavsiyesi değildir.
           </p>
         </div>
       </div>

@@ -101,6 +101,23 @@ app.get('/scrape', async (req, res) => {
   res.json(mockData);
 });
 
+app.post('/ask-ai', async (req, res) => {
+  const { matchData } = req.body;
+  
+  if (!matchData) {
+    return res.status(400).json({ error: 'Match data required' });
+  }
+
+  // Mock AI analizi - gerçekte GPT-4o'ya gönderilecek
+  const aiAnalysis = {
+    commentary: `${matchData.period} periyodunda maç oldukça rekabetçi seyrediyor. ${matchData.awayTeam}, ${matchData.awayScore - matchData.homeScore} sayı farkla önde gidiyor. ${matchData.homeTeam}'in şut yüzdesi düşük, ancak ribaunt sayısı yüksek. Kritik anlarda savunma önemli olacak.`,
+    bettingInsight: `Maçın gidişatına göre ${matchData.awayTeam} önde gözüküyor. Oranlar bunu yansıtıyor (${matchData.awayOdds}). ${matchData.homeTeam}'in son çeyrekde performans artışı göstermesi gerekiyor.`,
+    timestamp: Date.now()
+  };
+
+  res.json(aiAnalysis);
+});
+
 app.listen(PORT, () => {
   console.log(`✓ Scraper service running on http://localhost:${PORT}`);
   console.log('Ready to receive requests from extension...');

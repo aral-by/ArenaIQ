@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { useMatchData } from '../hooks/useMatchData';
 import ScoreHeader from './components/ScoreHeader';
 import QuarterBreakdown from './components/QuarterBreakdown';
 import MatchStatistics from './components/MatchStatistics';
 import MinuteByMinuteTable from './components/MinuteByMinuteTable';
-import CommentaryFeed from './components/CommentaryFeed';
+import AIPanel from './components/AIPanel';
 import OddsPanel from './components/OddsPanel';
 import '../styles.css';
 
@@ -13,13 +13,38 @@ function Panel() {
   const params = new URLSearchParams(window.location.search);
   const matchUrl = params.get('url') || '';
   const { matchData, analyses, loading, error } = useMatchData(matchUrl);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiAnalyses, setAiAnalyses] = useState<any[]>([]);
+
+  const handleAskAI = async () => {
+    if (!matchData || aiLoading) return;
+    
+    setAiLoading(true);
+    try {
+      // API'den AI analizi iste
+      const response = await fetch('http://localhost:4000/ask-ai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ matchData })
+      });
+      
+      if (response.ok) {
+        const analysis = await response.json();
+        setAiAnalyses(prev => [analysis, ...prev]);
+      }
+    } catch (err) {
+      console.error('AI analizi alınamadı:', err);
+    } finally {
+      setAiLoading(false);
+    }
+  };
 
   if (loading && !matchData) {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
         <div className="text-center">
           <div className="w-10 h-10 border-2 border-slate-700 border-t-purple-500 rounded-full animate-spin mx-auto mb-3"></div>
-          <p className="text-slate-500 text-sm">Loading...</p>
+          <p className="text-slate-500 text-sm">Yükleniyor...</p>
         </div>
       </div>
     );
@@ -29,7 +54,7 @@ function Panel() {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
         <div className="bg-slate-900/50 border border-slate-800 rounded p-6 max-w-md">
-          <p className="text-slate-400 text-sm">Error: {error}</p>
+          <p className="text-slate-400 text-sm">Hata: {error}</p>
         </div>
       </div>
     );
@@ -57,7 +82,7 @@ function Panel() {
             <QuarterBreakdown matchData={matchData} />
             <MinuteByMinuteTable matchData={matchData} />
             <MatchStatistics matchData={matchData} />
-            <CommentaryFeed analyses={analyses} />
+            <AIPanel onAskAI={handleAskAI} analyses={aiAnalyses} loading={aiLoading} />
           </div>
           <div className="space-y-5">
             <OddsPanel matchData={matchData} />

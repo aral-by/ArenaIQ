@@ -11,16 +11,16 @@ export default function QuarterBreakdown({ matchData }: Props) {
   return (
     <div className="bg-slate-900/50 rounded-lg border border-slate-800/50 p-5">
       <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">
-        Quarter Breakdown
+        Çeyrekler
       </h3>
       
       <div className="space-y-3">
         <div className="grid grid-cols-5 gap-2 text-center text-xs text-slate-500 font-medium">
           <div></div>
-          <div>Q1</div>
-          <div>Q2</div>
-          <div>Q3</div>
-          <div>Q4</div>
+          <div>1. Ç</div>
+          <div>2. Ç</div>
+          <div>3. Ç</div>
+          <div>4. Ç</div>
         </div>
 
         <div className="grid grid-cols-5 gap-2 text-center">

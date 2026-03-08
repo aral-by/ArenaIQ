@@ -11,7 +11,7 @@ export default function MinuteByMinuteTable({ matchData }: Props) {
   return (
     <div className="bg-slate-900/50 rounded-lg border border-slate-800/50 p-5">
       <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">
-        Minute by Minute
+        Dakika Dakika
       </h3>
       
       <div className="overflow-x-auto">
@@ -52,7 +52,7 @@ export default function MinuteByMinuteTable({ matchData }: Props) {
           {minuteByMinute.length > 10 && (
             <div className="mt-3 text-center">
               <button className="text-xs text-slate-500 hover:text-slate-400 transition">
-                Show all {minuteByMinute.length} minutes →
+                Tüm {minuteByMinute.length} dakikayı göster →
               </button>
             </div>
           )}

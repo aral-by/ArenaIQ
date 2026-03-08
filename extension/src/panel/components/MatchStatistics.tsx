@@ -45,7 +45,7 @@ export default function MatchStatistics({ matchData }: Props) {
   return (
     <div className="bg-slate-900/50 rounded-lg border border-slate-800/50 p-5">
       <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">
-        Team Statistics
+        Takım İstatistikleri
       </h3>
 
       <div className="flex justify-between items-center mb-4 pb-3 border-b border-slate-800">
@@ -55,61 +55,61 @@ export default function MatchStatistics({ matchData }: Props) {
       
       <div className="space-y-1">
         <StatRow 
-          label="FG%" 
+          label="Şut %" 
           homeValue={homeStats.fieldGoalPercentage} 
           awayValue={awayStats.fieldGoalPercentage}
           isPercentage
         />
         <StatRow 
-          label="FG Made" 
+          label="İsabetli Şut" 
           homeValue={homeStats.fieldGoalsMade} 
           awayValue={awayStats.fieldGoalsMade}
         />
         <StatRow 
-          label="2PT%" 
+          label="2 Sayılık %" 
           homeValue={homeStats.twoPointPercentage} 
           awayValue={awayStats.twoPointPercentage}
           isPercentage
         />
         <StatRow 
-          label="3PT%" 
+          label="3 Sayılık %" 
           homeValue={homeStats.threePointPercentage} 
           awayValue={awayStats.threePointPercentage}
           isPercentage
         />
         <StatRow 
-          label="FT%" 
+          label="Serbest Atış %" 
           homeValue={homeStats.freeThrowPercentage} 
           awayValue={awayStats.freeThrowPercentage}
           isPercentage
         />
         <StatRow 
-          label="Rebounds" 
+          label="Ribaunt" 
           homeValue={homeStats.totalRebounds} 
           awayValue={awayStats.totalRebounds}
         />
         <StatRow 
-          label="Assists" 
+          label="Asist" 
           homeValue={homeStats.assists} 
           awayValue={awayStats.assists}
         />
         <StatRow 
-          label="Steals" 
+          label="Top Çalma" 
           homeValue={homeStats.steals} 
           awayValue={awayStats.steals}
         />
         <StatRow 
-          label="Blocks" 
+          label="Blok" 
           homeValue={homeStats.blocks} 
           awayValue={awayStats.blocks}
         />
         <StatRow 
-          label="Turnovers" 
+          label="Top Kaybı" 
           homeValue={homeStats.turnovers} 
           awayValue={awayStats.turnovers}
         />
         <StatRow 
-          label="Fouls" 
+          label="Faul" 
           homeValue={homeStats.fouls} 
           awayValue={awayStats.fouls}
         />
