@@ -2,6 +2,9 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { useMatchData } from '../hooks/useMatchData';
 import ScoreHeader from './components/ScoreHeader';
+import QuarterBreakdown from './components/QuarterBreakdown';
+import MatchStatistics from './components/MatchStatistics';
+import MinuteByMinuteTable from './components/MinuteByMinuteTable';
 import CommentaryFeed from './components/CommentaryFeed';
 import OddsPanel from './components/OddsPanel';
 import '../styles.css';
@@ -50,10 +53,13 @@ function Panel() {
         <ScoreHeader matchData={matchData} />
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 space-y-5">
+            <QuarterBreakdown matchData={matchData} />
+            <MinuteByMinuteTable matchData={matchData} />
+            <MatchStatistics matchData={matchData} />
             <CommentaryFeed analyses={analyses} />
           </div>
-          <div>
+          <div className="space-y-5">
             <OddsPanel matchData={matchData} />
           </div>
         </div>
