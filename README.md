@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/logo.png" alt="ArenaIQ Logo" width="600">
+  <img src="../logo.png" alt="ArenaIQ Logo" width="600">
   
   # ArenaIQ
   
