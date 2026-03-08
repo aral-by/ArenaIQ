@@ -15,8 +15,8 @@ function Panel() {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-purple-300 text-lg">Maç verileri yükleniyor...</p>
+          <div className="w-12 h-12 border-3 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+          <p className="text-slate-400">Loading match data...</p>
         </div>
       </div>
     );
@@ -25,8 +25,8 @@ function Panel() {
   if (error) {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-        <div className="bg-red-900/20 border border-red-500/50 rounded-lg p-6 max-w-md">
-          <p className="text-red-400 text-lg">Hata: {error}</p>
+        <div className="bg-slate-900 border border-red-900/50 rounded p-6 max-w-md">
+          <p className="text-red-400">Error: {error}</p>
         </div>
       </div>
     );
@@ -36,14 +36,17 @@ function Panel() {
 
   return (
     <div className="min-h-screen bg-slate-950">
-      <div className="max-w-7xl mx-auto p-6">
-        <div className="mb-6 flex items-center gap-3">
-          <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
-            <span className="text-white font-bold text-2xl">AI</span>
-          </div>
-          <h1 className="text-3xl font-bold text-white">ArenaIQ</h1>
+      <div className="border-b border-slate-900 bg-slate-950/80 backdrop-blur sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <img 
+            src="../../logo/mainlogo.png" 
+            alt="ArenaIQ" 
+            className="h-8 w-auto"
+          />
         </div>
+      </div>
 
+      <div className="max-w-7xl mx-auto p-6">
         <ScoreHeader matchData={matchData} />
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">

@@ -7,29 +7,21 @@ interface Props {
 
 export default function CommentaryFeed({ analyses }: Props) {
   return (
-    <div className="bg-slate-900 rounded-xl p-6 border border-purple-500/20">
-      <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-        <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
-        Maç Yorumu
+    <div className="bg-slate-900 rounded p-5 border border-slate-800">
+      <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wide mb-4">
+        Match Commentary
       </h3>
       
-      <div className="space-y-4 max-h-[600px] overflow-y-auto">
+      <div className="space-y-3 max-h-[600px] overflow-y-auto">
         {analyses.length === 0 ? (
-          <p className="text-slate-400 text-center py-8">Henüz analiz yok...</p>
+          <p className="text-slate-500 text-center py-8 text-sm">No analysis yet...</p>
         ) : (
           analyses.map((analysis, idx) => (
-            <div key={idx} className="bg-slate-800/50 rounded-lg p-4 border border-slate-700">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-white font-bold">AI</span>
-                </div>
-                <div className="flex-1">
-                  <p className="text-slate-200 leading-relaxed mb-2">{analysis.commentary}</p>
-                  <p className="text-slate-400 text-sm">
-                    {new Date(analysis.timestamp).toLocaleTimeString('tr-TR')}
-                  </p>
-                </div>
-              </div>
+            <div key={idx} className="bg-slate-800 rounded p-4 border border-slate-700/50">
+              <p className="text-slate-200 text-sm leading-relaxed mb-2">{analysis.commentary}</p>
+              <p className="text-slate-500 text-xs">
+                {new Date(analysis.timestamp).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
+              </p>
             </div>
           ))
         )}

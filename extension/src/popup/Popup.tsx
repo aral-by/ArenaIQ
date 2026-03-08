@@ -20,34 +20,35 @@ function Popup() {
   };
 
   return (
-    <div className="w-80 p-6 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center">
-          <span className="text-white font-bold text-xl">AI</span>
-        </div>
-        <h1 className="text-2xl font-bold text-white">ArenaIQ</h1>
+    <div className="w-96 bg-slate-950">
+      <div className="bg-slate-900 px-6 py-4 border-b border-slate-800">
+        <img 
+          src="../../logo/mainlogo.png" 
+          alt="ArenaIQ" 
+          className="h-8 w-auto"
+        />
       </div>
       
-      <div className="space-y-4">
+      <div className="p-6 space-y-4">
         <div>
-          <label className="block text-sm font-medium text-purple-200 mb-2">
-            FlashScore Maç Linki
+          <label className="block text-sm font-medium text-slate-400 mb-2">
+            Maçın Linki:
           </label>
           <input
             type="text"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            placeholder="https://www.flashscore.com/match/..."
-            className="w-full px-4 py-2.5 bg-slate-800 border border-purple-500/30 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            placeholder="Paste FlashScore match URL..."
+            className="w-full px-3 py-2.5 bg-slate-900 border border-slate-700 rounded text-white text-sm placeholder-slate-600 focus:outline-none focus:border-purple-600 focus:ring-1 focus:ring-purple-600 transition"
           />
         </div>
         
         <button
           onClick={handleAnalyze}
           disabled={!url}
-          className="w-full py-3 bg-gradient-to-r from-purple-600 to-purple-500 text-white font-semibold rounded-lg hover:from-purple-500 hover:to-purple-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="w-full py-2.5 bg-purple-600 text-white text-sm font-medium rounded hover:bg-purple-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
         >
-          Analizi Başlat
+          Maça Göz At
         </button>
       </div>
     </div>
