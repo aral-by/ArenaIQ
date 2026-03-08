@@ -80,6 +80,7 @@ app.get('/scrape', async (req, res) => {
       away: { q1: 28, q2: 24, q3: 25, q4: 25 }
     },
     minuteByMinute: [
+      // Q1 - 10 dakika
       { minute: 1, homePoints: 2, awayPoints: 3, period: 'Q1' },
       { minute: 2, homePoints: 4, awayPoints: 2, period: 'Q1' },
       { minute: 3, homePoints: 3, awayPoints: 5, period: 'Q1' },
@@ -88,8 +89,41 @@ app.get('/scrape', async (req, res) => {
       { minute: 6, homePoints: 3, awayPoints: 4, period: 'Q1' },
       { minute: 7, homePoints: 2, awayPoints: 2, period: 'Q1' },
       { minute: 8, homePoints: 3, awayPoints: 5, period: 'Q1' },
-      { minute: 9, homePoints: 0, awayPoints: 0, period: 'Q2' },
-      { minute: 10, homePoints: 5, awayPoints: 4, period: 'Q2' }
+      { minute: 9, homePoints: 0, awayPoints: 0, period: 'Q1' },
+      { minute: 10, homePoints: 0, awayPoints: 0, period: 'Q1' },
+      // Q2 - 10 dakika
+      { minute: 11, homePoints: 5, awayPoints: 4, period: 'Q2' },
+      { minute: 12, homePoints: 3, awayPoints: 3, period: 'Q2' },
+      { minute: 13, homePoints: 2, awayPoints: 5, period: 'Q2' },
+      { minute: 14, homePoints: 4, awayPoints: 2, period: 'Q2' },
+      { minute: 15, homePoints: 2, awayPoints: 3, period: 'Q2' },
+      { minute: 16, homePoints: 3, awayPoints: 2, period: 'Q2' },
+      { minute: 17, homePoints: 0, awayPoints: 2, period: 'Q2' },
+      { minute: 18, homePoints: 2, awayPoints: 0, period: 'Q2' },
+      { minute: 19, homePoints: 1, awayPoints: 3, period: 'Q2' },
+      { minute: 20, homePoints: 0, awayPoints: 0, period: 'Q2' },
+      // Q3 - 10 dakika
+      { minute: 21, homePoints: 7, awayPoints: 5, period: 'Q3' },
+      { minute: 22, homePoints: 3, awayPoints: 2, period: 'Q3' },
+      { minute: 23, homePoints: 2, awayPoints: 4, period: 'Q3' },
+      { minute: 24, homePoints: 5, awayPoints: 3, period: 'Q3' },
+      { minute: 25, homePoints: 2, awayPoints: 2, period: 'Q3' },
+      { minute: 26, homePoints: 3, awayPoints: 4, period: 'Q3' },
+      { minute: 27, homePoints: 0, awayPoints: 2, period: 'Q3' },
+      { minute: 28, homePoints: 2, awayPoints: 0, period: 'Q3' },
+      { minute: 29, homePoints: 2, awayPoints: 3, period: 'Q3' },
+      { minute: 30, homePoints: 0, awayPoints: 0, period: 'Q3' },
+      // Q4 - 10 dakika
+      { minute: 31, homePoints: 5, awayPoints: 6, period: 'Q4' },
+      { minute: 32, homePoints: 4, awayPoints: 3, period: 'Q4' },
+      { minute: 33, homePoints: 3, awayPoints: 2, period: 'Q4' },
+      { minute: 34, homePoints: 5, awayPoints: 4, period: 'Q4' },
+      { minute: 35, homePoints: 2, awayPoints: 3, period: 'Q4' },
+      { minute: 36, homePoints: 3, awayPoints: 2, period: 'Q4' },
+      { minute: 37, homePoints: 2, awayPoints: 2, period: 'Q4' },
+      { minute: 38, homePoints: 2, awayPoints: 3, period: 'Q4' },
+      { minute: 39, homePoints: 0, awayPoints: 0, period: 'Q4' },
+      { minute: 40, homePoints: 0, awayPoints: 0, period: 'Q4' }
     ],
     analysis: {
       commentary: 'The game is intensely competitive in the final quarter. Boston maintains a narrow 4-point lead with strong defensive pressure. Lakers are struggling with turnovers but LeBron is keeping them in the game with clutch shots.',
