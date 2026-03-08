@@ -15,7 +15,7 @@ function Popup() {
 
   const handleAnalyze = () => {
     if (!url) return;
-    const panelUrl = chrome.runtime.getURL(`panel.html?url=${encodeURIComponent(url)}`);
+    const panelUrl = chrome.runtime.getURL(`src/panel/panel.html?url=${encodeURIComponent(url)}`);
     chrome.tabs.create({ url: panelUrl });
   };
 
