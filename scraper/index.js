@@ -20,7 +20,7 @@ app.get('/scrape', async (req, res) => {
     awayTeam: 'Boston Celtics',
     homeScore: 98,
     awayScore: 102,
-    minute: 45,
+    minute: 8,
     period: 'Q4',
     status: 'live',
     league: 'NBA',

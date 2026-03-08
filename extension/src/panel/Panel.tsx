@@ -75,13 +75,12 @@ function Panel() {
       </div>
 
       <div className="max-w-7xl mx-auto px-8 py-10">
-        <div className="space-y-8">
+        <div className="space-y-6">
           <ScoreHeader matchData={matchData} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <QuarterBreakdown matchData={matchData} />
-            <MatchStatistics matchData={matchData} />
-          </div>
+          <QuarterBreakdown matchData={matchData} />
+          
+          <MatchStatistics matchData={matchData} />
 
           <ScoreChart matchData={matchData} />
           
