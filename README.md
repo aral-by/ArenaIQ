@@ -1,6 +1,10 @@
-# ArenaIQ
-
-Real-time AI-powered basketball match analysis Chrome extension for FlashScore.
+<div align="center">
+  <img src="assets/logo.png" alt="ArenaIQ Logo" width="600">
+  
+  # ArenaIQ
+  
+  Real-time AI-powered basketball match analysis Chrome extension for FlashScore.
+</div>
 
 ## Features
 
