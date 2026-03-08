@@ -7,41 +7,41 @@ interface Props {
 
 export default function OddsPanel({ matchData }: Props) {
   return (
-    <div className="bg-slate-900 rounded p-5 border border-slate-800">
-      <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wide mb-4">
-        Betting Odds
+    <div className="bg-slate-900/50 rounded-lg border border-slate-800/50 p-5">
+      <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">
+        Odds
       </h3>
       
-      <div className="space-y-3">
-        <div className="bg-slate-800 rounded p-4 border border-slate-700/50">
+      <div className="space-y-4">
+        <div>
           <div className="flex justify-between items-center mb-2">
-            <span className="text-slate-300 text-sm">{matchData.homeTeam}</span>
-            <span className="text-xl font-semibold text-purple-400">{matchData.homeOdds.toFixed(2)}</span>
+            <span className="text-slate-400 text-xs">{matchData.homeTeam}</span>
+            <span className="text-2xl font-bold text-white tabular-nums">{matchData.homeOdds.toFixed(2)}</span>
           </div>
-          <div className="w-full bg-slate-700 rounded-full h-1.5">
+          <div className="w-full bg-slate-800 rounded-full h-1">
             <div 
-              className="bg-purple-600 h-1.5 rounded-full transition-all"
+              className="bg-purple-500 h-1 rounded-full transition-all duration-500"
               style={{ width: `${Math.min((1 / matchData.homeOdds) * 100, 100)}%` }}
             ></div>
           </div>
         </div>
 
-        <div className="bg-slate-800 rounded p-4 border border-slate-700/50">
+        <div>
           <div className="flex justify-between items-center mb-2">
-            <span className="text-slate-300 text-sm">{matchData.awayTeam}</span>
-            <span className="text-xl font-semibold text-purple-400">{matchData.awayOdds.toFixed(2)}</span>
+            <span className="text-slate-400 text-xs">{matchData.awayTeam}</span>
+            <span className="text-2xl font-bold text-white tabular-nums">{matchData.awayOdds.toFixed(2)}</span>
           </div>
-          <div className="w-full bg-slate-700 rounded-full h-1.5">
+          <div className="w-full bg-slate-800 rounded-full h-1">
             <div 
-              className="bg-purple-600 h-1.5 rounded-full transition-all"
+              className="bg-purple-500 h-1 rounded-full transition-all duration-500"
               style={{ width: `${Math.min((1 / matchData.awayOdds) * 100, 100)}%` }}
             ></div>
           </div>
         </div>
 
-        <div className="bg-amber-900/10 border border-amber-800/30 rounded p-3 mt-4">
-          <p className="text-amber-200/80 text-xs">
-            For informational purposes only. Not financial advice.
+        <div className="bg-slate-800/30 rounded p-3 mt-6">
+          <p className="text-slate-500 text-xs leading-relaxed">
+            Informational purposes only. Not betting advice.
           </p>
         </div>
       </div>

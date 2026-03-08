@@ -23,7 +23,7 @@ function Popup() {
     <div className="w-96 bg-slate-950">
       <div className="bg-slate-900 px-6 py-4 border-b border-slate-800">
         <img 
-          src="../../logo/mainlogo.png" 
+          src="../../../logo/mainlogo.png" 
           alt="ArenaIQ" 
           className="h-8 w-auto"
         />
